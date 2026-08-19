@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>台股作戰卡 2026-08-20</title>
+<style>
+:root{--gold:#FFD700;--gold-soft:#f5c842;--green:#2ecc71;--red:#e74c3c;--red-soft:#ff6b6b;--blue:#4fc3f7;
+--bg1:#0a0a1a;--bg2:#1a1a2e;--bg3:#16213e;--card:rgba(255,255,255,.05);--border:rgba(255,255,255,.12);
+--text:#f0f0ff;--muted:#9a9ab8;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans TC','Segoe UI','Microsoft JhengHei',sans-serif;background:linear-gradient(135deg,var(--bg1),var(--bg2),var(--bg3));color:var(--text);min-height:100vh;padding:24px 16px;line-height:1.7}
+.container{max-width:1100px;margin:0 auto}
+.header{text-align:center;padding:34px 20px 24px;border-radius:20px;background:linear-gradient(160deg,rgba(255,215,0,.08),rgba(255,255,255,.02));border:1px solid var(--border);margin-bottom:22px;position:relative;overflow:hidden}
+.header::before{content:'';position:absolute;top:-60%;left:-20%;width:140%;height:200%;background:radial-gradient(circle at 30% 20%,rgba(255,215,0,.12),transparent 55%);pointer-events:none}
+.badge{display:inline-block;background:linear-gradient(135deg,var(--gold),#b8860b);color:#1a1a2e;font-weight:800;font-size:.82rem;padding:4px 16px;border-radius:30px;letter-spacing:2px;margin-bottom:12px}
+h1{font-size:clamp(1.5rem,4vw,2.2rem);background:linear-gradient(135deg,#fff,var(--gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:3px;font-weight:900}
+.sub{color:var(--muted);font-size:.9rem;margin-top:8px}
+.meta{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:12px;font-size:.82rem;color:var(--muted)}
+.meta b{color:var(--gold-soft)}
+.countdown{display:inline-block;margin-top:14px;padding:8px 22px;border-radius:30px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.35);font-size:1.05rem;font-weight:800;letter-spacing:2px;color:var(--gold)}
+.section-title{font-size:1.15rem;font-weight:800;margin:26px 0 12px;display:flex;align-items:center;gap:10px;color:#fff}
+.section-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(255,215,0,.5),transparent)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px}
+@media(max-width:760px){.grid{grid-template-columns:1fr}}
+.card{border-radius:16px;padding:20px;background:var(--card);border:1px solid var(--border)}
+.card h3{font-size:1rem;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--border)}
+.card ul{list-style:none}
+.card li{padding:6px 0 6px 18px;position:relative;font-size:.92rem;border-bottom:1px solid rgba(255,255,255,.05)}
+.card li:last-child{border-bottom:none}
+.card li::before{position:absolute;left:0}
+.big{font-size:1.45rem;font-weight:900;text-align:center;padding:14px;border-radius:14px;margin-bottom:8px;letter-spacing:1px}
+.big.gold{background:linear-gradient(135deg,rgba(255,215,0,.18),rgba(255,215,0,.05));border:1px solid rgba(255,215,0,.4);color:var(--gold)}
+.alarm{border-radius:16px;padding:20px;background:linear-gradient(160deg,rgba(231,76,60,.12),rgba(231,76,60,.03));border:1px solid rgba(231,76,60,.4);margin-bottom:20px;font-size:.95rem}
+.alarm b{color:var(--red-soft)}
+.scen{border-radius:16px;padding:18px;border:1px solid var(--border);background:var(--card)}
+.scen .nm{font-size:1.1rem;font-weight:800}
+.scen .wt{font-size:2rem;font-weight:900;color:var(--gold);margin:4px 0}
+.scen .rg{color:var(--muted);font-size:.88rem}
+.scen .nt{font-size:.85rem;color:#d8d8ee;margin-top:8px}
+.scen.b{border-color:rgba(231,76,60,.45)}.scen.a{border-color:rgba(46,204,113,.45)}.scen.c{border-color:rgba(255,215,0,.45)}
+.scen.b .wt{color:var(--red-soft)}.scen.a .wt{color:var(--green)}
+.ladder{border-radius:16px;border:1px solid var(--border);overflow:hidden;margin-bottom:20px}
+.lv{display:flex;align-items:center;gap:12px;padding:11px 18px;border-bottom:1px solid rgba(255,255,255,.06);font-size:.92rem}
+.lv:last-child{border-bottom:none}
+.lv .price{font-weight:800;min-width:84px}
+.lv .tag{font-size:.76rem;padding:2px 10px;border-radius:20px;white-space:nowrap}
+.lv .desc{color:var(--muted);font-size:.85rem}
+.zone-red{background:linear-gradient(90deg,rgba(231,76,60,.14),transparent)}
+.zone-green{background:linear-gradient(90deg,rgba(46,204,113,.12),transparent)}
+.zone-gold{background:linear-gradient(90deg,rgba(255,215,0,.10),transparent)}
+.tag.red{background:rgba(231,76,60,.2);color:var(--red-soft)}
+.tag.green{background:rgba(46,204,113,.2);color:var(--green)}
+.tag.gold{background:rgba(255,215,0,.2);color:var(--gold-soft)}
+.tag.blue{background:rgba(79,195,247,.2);color:var(--blue)}
+.note{border-radius:14px;padding:16px;background:linear-gradient(160deg,rgba(79,195,247,.08),rgba(79,195,247,.02));border:1px solid rgba(79,195,247,.3);margin-bottom:20px;font-size:.92rem}
+.note b{color:var(--blue)}
+.cmd{border-radius:14px;padding:16px 20px;background:var(--card);border:1px solid var(--border);margin-bottom:10px;font-size:.93rem}
+.cmd .n{display:inline-block;background:var(--gold);color:#1a1a2e;font-weight:900;width:24px;height:24px;border-radius:50%;text-align:center;line-height:24px;margin-right:10px;font-size:.85rem}
+.t5{border-radius:16px;border:1px solid var(--border);overflow:hidden;margin-bottom:14px}
+.t5r{display:flex;align-items:center;gap:12px;padding:12px 18px;border-bottom:1px solid rgba(255,255,255,.06);font-size:.9rem;flex-wrap:wrap}
+.t5r:last-child{border-bottom:none}
+.t5r .stk{font-weight:900;min-width:150px}
+.t5r .sc{font-weight:800;color:var(--gold)}
+.t5r .badge2{font-size:.74rem;padding:2px 10px;border-radius:20px;background:rgba(79,195,247,.2);color:var(--blue);white-space:nowrap}
+.t5r .warn{font-size:.74rem;padding:2px 10px;border-radius:20px;background:rgba(231,76,60,.2);color:var(--red-soft);white-space:nowrap}
+.quote{text-align:center;font-size:1.05rem;color:var(--gold-soft);padding:20px;border-top:1px solid var(--border);margin-top:8px;letter-spacing:1px}
+.footer{text-align:center;font-size:.75rem;color:var(--muted);padding:8px 0 26px;line-height:1.8}
+</style></head><body><div class="container">
+
+<div class="header">
+  <div class="badge">⚔️ 總司令作戰室 v2.0・豐富版（每日標準版）</div>
+  <h1>台股作戰卡</h1>
+  <div class="sub">2026-08-20（週四）・盤前戰略部署</div>
+  <div class="countdown">⏳ 距離開盤 <span id="cd">-- : -- : --</span></div>
+  <div class="meta"><span>📊 製表：<b>邦尼 AI 金融分析</b>・2026-08-20 07:27</span><span>🔧 方法論：<b>夜盤×美股修正係數</b>＋AI580 交叉驗證</span></div>
+</div>
+
+<div class="section-title">🚨 盤前定調 — 開高挑戰・美股帶動</div>
+<div class="big gold">預期基準 44,916 點（昨收 44,719 + 夜盤+302.0 × 0.65）</div>
+<div class="alarm">🌙 <b>夜盤情報：</b>台指期（夜盤）收 <b>44,802.00（+302.0 / +0.7%）</b>，量 41,503 口<br>🇺🇸 <b>美股收盤：</b>道瓊 <b>53,463.05（+0.22%）</b>｜那斯達克 <b>26,331.09（+0.16%）</b>｜S&P500 <b>7,707.98（+0.21%）</b><br>⚖️ <b>結論：</b>基準 44,916（昨收 44,719 + 夜盤+302.0 × 0.65）→ 開低0% / 平開29% / 開高71%</div>
+
+<div class="section-title">🔴 空方三把刀　／　🟢 多方三根柱</div>
+<div class="grid">
+  <div class="card"><h3>🔴 空方三把刀</h3><ul><li>外資轉賣 <b style='color:var(--red-soft)'>-416.39 億</b></li><li>自營避險賣超 <b>-131.56 億</b> — 避險情緒升溫</li><li>台積電 -1.26% — 權值遭調節</li></ul></div>
+  <div class="card"><h3>🟢 多方三根柱</h3><ul><li>美股三大指數齊漲（道瓊 +0.22% 最強）</li></ul></div>
+</div>
+
+<div class="section-title">🗺️ 關鍵價位地圖</div>
+<div class="ladder">
+  <div class="lv zone-gold"><span class="price" style="color:var(--gold)">45,370</span><span class="tag gold">壓力區上緣</span><span class="desc">基準 +1%：減碼區上緣</span></div>
+  <div class="lv zone-green"><span class="price" style="color:var(--green)">44,719</span><span class="tag green">昨收</span><span class="desc">加權現貨收盤</span></div>
+  <div class="lv"><span class="price" style="color:var(--blue)">44,802.00</span><span class="tag blue">夜盤收盤</span><span class="desc">今日開盤參考基準（+302.0）</span></div>
+  <div class="lv zone-green"><span class="price" style="color:var(--green)">44,690</span><span class="tag green">多空分水嶺</span><span class="desc">守穩 = 多頭延續，續攻 45,280</span></div>
+  <div class="lv zone-gold"><span class="price" style="color:var(--gold-soft)">44,240</span><span class="tag gold">劇本B 防線</span><span class="desc">跌破 = 回測 43,790，全面防守</span></div>
+  <div class="lv zone-red"><span class="price" style="color:var(--red)">43,790</span><span class="tag red">逃命波警戒</span><span class="desc">基準 -2.5%：跌破加速趕底</span></div>
+</div>
+
+<div class="section-title">🎭 三種劇本</div>
+<div class="grid">
+  <div class="scen a"><div class="nm">✅ 劇本 A</div><div class="wt">29%</div><div class="rg">平開震盪・換手續攻</div><div class="nt">第一小時守穩 44,690 + 量能 ≥7,000 億 → 換手成功，續攻 45,280<br>📌 觸發：44,690 不破 ＋ 放量</div></div>
+  <div class="scen b"><div class="nm">❌ 劇本 B</div><div class="wt">0%</div><div class="rg">開低走低・回測防守</div><div class="nt">跌破 44,690 且量縮 → 外資空單發酵，回測 44,240<br>📌 觸發：44,690 失守 ＋ 量縮（&lt;6,000 億）</div></div>
+  <div class="scen c"><div class="nm">🚀 劇本 C</div><div class="wt">71%</div><div class="rg">開高挑戰・美股帶動</div><div class="nt">美股大漲情緒延續 → 開高 45,050+，但別追高，45,370 前減碼<br>📌 觸發：開盤 &gt;45,050 ＋ 權值續強</div></div>
+</div>
+
+<div class="section-title">📢 作戰指示</div>
+<div class="cmd"><span class="n">1</span><b>開盤別急</b> — 先看 44,690 守不守得住，第一小時量能是關鍵（≥7,000 億健康）</div>
+<div class="cmd"><span class="n">2</span><b>守穩 44,690</b> → 手中持股續抱；跌破 → 減碼應對，別跟外資對做</div>
+<div class="cmd"><span class="n">3</span><b>權值風向球：</b>台積電 2,350.00（-1.26%）｜聯電 115.50（-2.94%）｜鴻海 245.00（-1.61%）｜聯發科 3,845.00（-1.03%）</div>
+<div class="cmd"><span class="n">4</span><b>8 月是防守月</b>（天樞劇本）— 現金水位維持 30-40%，45,280 上方是減碼區不是加碼區</div>
+
+<div class="section-title">🤖 AI580 Top5 交叉驗證（Cocoro 上傳・邦尼查股實測）</div>
+<div class="t5"><div class="t5r"><span class="stk">6781 AES-KY</span><span class="badge2">上漲機率 <b>89.8%</b></span><span class='sc'>🏆 64分</span><span class="badge2">電子零組件業</span><span class="warn">技術/籌碼未過</span></div><div class="t5r"><span class="stk">4764 雙鍵</span><span class="badge2">上漲機率 <b>86.0%</b></span><span class='sc'>🏆 52分</span><span class="badge2">化學工業</span><span class="warn">技術/籌碼未過</span></div><div class="t5r"><span class="stk">2492 華新科</span><span class="badge2">上漲機率 <b>85.5%</b></span><span class='sc'>🏆 73分</span><span class="badge2">電子工業</span><span class="warn">技術/籌碼未過</span></div><div class="t5r"><span class="stk">7610 聯友金屬</span><span class="badge2">上漲機率 <b>83.6%</b></span><span class='sc'>🏆 68分</span><span class="badge2">綠能環保</span><span class="warn">技術/籌碼未過</span></div><div class="t5r"><span class="stk">2354 鴻準</span><span class="badge2">上漲機率 <b>83.2%</b></span><span class='sc'>🏆 79分</span><span class="badge2">其他電子業</span><span class="warn">技術/籌碼未過</span></div></div><div class="note">📌 <b>邦尼判讀：</b>AI580 Top5 為 Cocoro 上傳之 prediction_report（AI580 主鏈每日 01:30 產出，08:45 已含當日最新）；四維分數為邦尼查股即時交叉驗證，名單僅供參考，進場以觸發點為準。</div>
+
+
+
+<div class="section-title">📊 權值股風向球（法人數據 08/19）</div>
+<div class="grid">
+  <div class="card"><h3>📊 權值五虎</h3><ul><li>台積電：<b>2,350.00</b>（-1.26%）⚠️ <span style="color:var(--muted);font-size:.82rem">— 權值遭調節・觀察 2,300 支撐</span></li><li>聯電：<b>115.50</b>（-2.94%）⚠️ <span style="color:var(--muted);font-size:.82rem">— 權值遭調節</span></li><li>鴻海：<b>245.00</b>（-1.61%）⚠️ <span style="color:var(--muted);font-size:.82rem">— 權值遭調節</span></li><li>聯發科：<b>3,845.00</b>（-1.03%）⚠️ <span style="color:var(--muted);font-size:.82rem">— 權值遭調節</span></li></ul></div>
+  <div class="card"><h3>🏦 三大法人</h3><ul><li>外資及陸資：<b style="color:var(--red-soft)">-416.39 億</b></li><li>投信：<b style="color:var(--red-soft)">-166.01 億</b>（內資動向）</li><li>自營避險：<b style="color:var(--red-soft)">-131.56 億</b></li><li>合計：<b style="color:var(--red-soft)">-753.59 億</b></li></ul></div>
+</div>
+
+<div class="section-title">🎯 今日焦點：網紅日</div>
+<div class="note">📌 <b>網紅日：</b>8/20-28 大行情？<br>📌 <b>邦尼補刀：</b>台積電 -1.26% 屬漲多回吐，觀察 2,300 支撐。</div>
+
+<div class="section-title">📅 8 月關鍵時間軸</div>
+<div class="ladder"><div class="lv" style="opacity:0.45"><span class="price" style="color:var(--gold)">8/4</span><span class="tag gold">📣 聯電法說</span><span class="desc">法說會・半導體風向</span></div><div class="lv" style="opacity:0.45"><span class="price" style="color:var(--blue)">8/7</span><span class="tag blue">🍂 立秋</span><span class="desc">節氣轉換・市場節奏切換</span></div><div class="lv" style="opacity:0.45"><span class="price" style="color:var(--blue)">8/12</span><span class="tag blue">🌑 獅子座日蝕</span><span class="desc">天文轉折點</span></div><div class="lv"><span class="price" style="color:var(--gold)">8/20</span><span class="tag gold">🎯 今日</span><span class="desc">開盤戰・網紅日</span></div><div class="lv"><span class="price" style="color:var(--red)">8/28</span><span class="tag red">🌕 雙魚座月偏蝕</span><span class="desc">關鍵轉折・天樞劇本 8 月防守</span></div></div>
+
+<div class="quote">「夜盤+302洩情緒，美股撐多頭；開盤先看分水嶺，守穩續攻破則撤！」<br>—— 包子總司令 × 邦尼 AI 金融分析</div>
+
+<div class="footer">
+⚠️ 本作戰卡為 AI 分析參考，非投資建議。市場有風險，決策請自行判斷。<br>
+邦尼 AI 金融分析・v2.0 豐富版（每日 08:45 自動生成）・2026-08-20 07:27
+</div>
+</div>
+<script>
+function fmt(s){var h=Math.floor(s/3600),m=Math.floor(s%3600/60),x=s%60;
+function p(v){return String(v).padStart(2,'0')}
+return p(h)+' : '+p(m)+' : '+p(x)}
+function tick(){
+var n=new Date(),d=new Date(n);d.setHours(9,0,0,0);
+var close=new Date(n);close.setHours(13,30,0,0);
+var el=document.getElementById('cd');
+var isDay=d.getDay()!=0&&d.getDay()!=6;
+if(isDay&&n>=d&&n<close){el.textContent='盤中・距收盤 '+fmt(Math.max(0,Math.floor((close-n)/1000)));return}
+if(n>d){d.setDate(d.getDate()+1);while(d.getDay()==0||d.getDay()==6)d.setDate(d.getDate()+1)}
+el.textContent=fmt(Math.max(0,Math.floor((d-n)/1000)))}
+tick();setInterval(tick,1000);
+</script>
+</body></html>
