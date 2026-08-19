@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh-Hant"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f5c451">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="作戰卡">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <title>台股作戰卡 2026-08-20</title>
 <style>
 :root{--gold:#FFD700;--gold-soft:#f5c842;--green:#2ecc71;--red:#e74c3c;--red-soft:#ff6b6b;--blue:#4fc3f7;
@@ -71,7 +78,7 @@ h1{font-size:clamp(1.5rem,4vw,2.2rem);background:linear-gradient(135deg,#fff,var
   <h1>台股作戰卡</h1>
   <div class="sub">2026-08-20（週四）・盤前戰略部署</div>
   <div class="countdown">⏳ 距離開盤 <span id="cd">-- : -- : --</span></div>
-  <div class="meta"><span>📊 製表：<b>邦尼 AI 金融分析</b>・2026-08-20 07:35</span><span>🔧 方法論：<b>夜盤×美股修正係數</b>＋AI580 交叉驗證</span></div>
+  <div class="meta"><span>📊 製表：<b>邦尼 AI 金融分析</b>・2026-08-20 07:42</span><span>🔧 方法論：<b>夜盤×美股修正係數</b>＋AI580 交叉驗證</span></div>
 </div>
 
 <div class="section-title">🚨 盤前定調 — 開高挑戰・美股帶動</div>
@@ -129,7 +136,7 @@ h1{font-size:clamp(1.5rem,4vw,2.2rem);background:linear-gradient(135deg,#fff,var
 <div class="footer">
 ⚠️ 本作戰卡為 AI 分析參考，非投資建議。市場有風險，決策請自行判斷。<br>
 🌐 網頁版（每日自動更新）：<a href="https://cocoroai-system.github.io/bonnie-battle-card/" style="color:var(--gold)">cocoroai-system.github.io/bonnie-battle-card</a><br>
-邦尼 AI 金融分析・v2.0 豐富版（每日 08:45 自動生成）・2026-08-20 07:35
+邦尼 AI 金融分析・v2.0 豐富版（每日 08:45 自動生成）・2026-08-20 07:42
 </div>
 </div>
 <script>
@@ -145,5 +152,8 @@ if(isDay&&n>=d&&n<close){el.textContent='盤中・距收盤 '+fmt(Math.max(0,Mat
 if(n>d){d.setDate(d.getDate()+1);while(d.getDay()==0||d.getDay()==6)d.setDate(d.getDate()+1)}
 el.textContent=fmt(Math.max(0,Math.floor((d-n)/1000)))}
 tick();setInterval(tick,1000);
+</script>
+<script>
+if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})})}
 </script>
 </body></html>
