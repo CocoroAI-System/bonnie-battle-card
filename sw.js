@@ -3,7 +3,7 @@
 // 策略：導覽請求 Network-First（每天都要最新卡片）+ 離線快取備援
 //       靜態資源（圖示/manifest）Cache-First
 // ========================================================================
-const CACHE = 'battle-card-v1';
+const CACHE = 'battle-card-v2';
 const PRECACHE = [
   './',
   './manifest.webmanifest',
