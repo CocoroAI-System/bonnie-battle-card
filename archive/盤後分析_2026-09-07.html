@@ -27,7 +27,8 @@ h1{font-size:1.55rem;letter-spacing:1px}
 ul{padding-left:20px}
 li{margin:5px 0}
 .card h3{color:var(--gold-soft);font-size:1rem;margin-bottom:8px}
-table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.9rem}
+/* 2026-09-22（Kevin 回報：手機可右滑到空白）：寬表把整頁撐寬 → 表格改自身橫向捲動 */
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.9rem;display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%;overscroll-behavior-x:contain}
 th,td{border:1px solid var(--border);padding:7px 10px;text-align:left}
 th{background:rgba(255,215,0,.08);color:var(--gold-soft)}
 .quote{border-left:3px solid var(--gold);padding:6px 12px;margin:8px 0;color:var(--muted);font-size:.9rem}
